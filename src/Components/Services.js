@@ -13,7 +13,6 @@ import {
 } from "@adobe/react-spectrum";
 import { MdDeleteOutline } from "react-icons/md";
 import { context } from "../reactContext/ContextProvider";
-import { FaArrowTrendUp, FaTruckFieldUn } from "react-icons/fa6";
 import useAddServices from "../hooks/useAddServices";
 
 const Services = () => {
@@ -109,7 +108,7 @@ const Services = () => {
             <Button
               variant="primary"
               staticColor="black"
-              style="fill"
+              style={{ fill: "both" }}
               marginStart="auto"
               onPress={() => handleSave()}
             >

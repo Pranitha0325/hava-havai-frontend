@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   Breadcrumbs,
   Item,
-  Text,
-  Heading,
   View,
   Tabs,
   TabList,
@@ -17,13 +15,13 @@ import { context } from "../reactContext/ContextProvider";
 const Airport = () => {
   const [airport, setAirport] = useState("");
   const { id } = useParams();
-  const { airports, totalterminals } = useContext(context);
+  const { airports } = useContext(context);
   useEffect(() => {
     fetchAirport();
   }, [id]);
 
   const fetchAirport = () => {
-    const filtered = airports.filter((air) => air._id == id);
+    const filtered = airports.filter((air) => air._id === id);
     setAirport(filtered);
   };
 

@@ -6,7 +6,6 @@ import {
   Column,
   Row,
   Cell,
-  View,
   ActionButton,
   DialogTrigger,
   Dialog,
@@ -14,16 +13,12 @@ import {
   ButtonGroup,
   Button,
   TextField,
-  Divider,
   Flex,
-  FileTrigger,
-  Checkbox,
 } from "@adobe/react-spectrum";
-import { FaArrowDownLong } from "react-icons/fa6";
-import data from "../db";
+
 import Edit from "@spectrum-icons/workflow/Edit";
 import Delete from "@spectrum-icons/workflow/Delete";
-import { useProvider } from "@adobe/react-spectrum";
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -34,7 +29,7 @@ import useDeleteData from "../hooks/useDeleteData";
 import { URL } from "../url/url";
 
 const Airports = () => {
-  const [data, setData] = useState();
+  const [data] = useState();
 
   const { details, setDetails, airports, setAirports } = useContext(context);
   const { loadsave, addData } = useAddData();
@@ -59,7 +54,7 @@ const Airports = () => {
   };
 
   const handleEdit = (id) => {
-    const filtered = airports.filter((data) => data._id == id);
+    const filtered = airports.filter((data) => data._id === id);
     setDetails(...filtered);
   };
 
@@ -95,7 +90,7 @@ const Airports = () => {
           <Button
             variant="primary"
             staticColor="black"
-            style="fill"
+            style={{ fill: "both" }}
             UNSAFE_className="cursor-pointer"
           >
             +Add new{" "}
@@ -255,7 +250,7 @@ const Airports = () => {
                         backgroundColor: "inherit",
                       }}
                     >
-                      {loadDelete && deleteId == item._id ? (
+                      {loadDelete && deleteId === item._id ? (
                         <span className="loading loading-spinner"></span>
                       ) : (
                         <Delete />

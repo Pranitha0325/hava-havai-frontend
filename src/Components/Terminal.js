@@ -1,12 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   View,
   Flex,
   Heading,
   Button,
-  Grid,
-  ActionButton,
-  Text,
   DialogTrigger,
   Dialog,
   TextField,
@@ -17,13 +14,12 @@ import {
 } from "@adobe/react-spectrum";
 import TerminalCard from "./TerminalCard";
 import { context } from "../reactContext/ContextProvider";
-import { FaAutoprefixer } from "react-icons/fa6";
+
 import useAddTerminal from "../hooks/useAddTerminal";
 import axios from "axios";
 import { URL } from "../url/url";
 
 const Terminal = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const {
     terminal,
     setTerminal,

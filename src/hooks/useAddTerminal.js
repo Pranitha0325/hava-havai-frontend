@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { context } from "../reactContext/ContextProvider";
 import { toast } from "react-hot-toast";
 import axios from "axios";
@@ -8,10 +8,10 @@ const useAddTerminal = () => {
   const [loadUpload, setLoadUpload] = useState(false);
   const {
     terminal,
-    setTerminal,
+
     file,
     setFile,
-    totalterminals,
+
     setTotalTerminals,
   } = useContext(context);
 

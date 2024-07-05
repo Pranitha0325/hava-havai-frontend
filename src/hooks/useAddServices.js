@@ -1,8 +1,6 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { context } from "../reactContext/ContextProvider";
 import { toast } from "react-hot-toast";
-import axios from "axios";
-import { URL } from "../url/url";
 
 const useAddServices = () => {
   const [loadService, setLoadService] = useState(false);
@@ -24,12 +22,8 @@ const useAddServices = () => {
         formData.append("subcategory", servicedetails.subcategory);
         formData.append("file", servicedetails.file);
         formData.append("desc", servicedetails.desc);
-        const config = {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        };
-        const res = await axios.post(`${URL}/add-service`, formData, config);
+
+        // const res = await axios.post(`${URL}/add-service`, formData, config);
         setLoadService(false);
         toast.success("Lost & found saved successfully 💥");
       } else {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, View, Image } from "@adobe/react-spectrum";
+import { Flex, Image } from "@adobe/react-spectrum";
 import image from "../assets/havahavai.png"; // Adjust the path to your image
 import profile from "../assets/Avatar - Desktop - Light.png"; // Adjust the path to your profile image
 

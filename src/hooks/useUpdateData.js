@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { context } from "../reactContext/ContextProvider";
 import { toast } from "react-hot-toast";
 import axios from "axios";
@@ -7,7 +7,7 @@ import { URL } from "../url/url";
 const useUpdateData = (close) => {
   const [loadUpdate, setLoadUpdate] = useState(false);
 
-  const { details, setDetails, airports, setAirports } = useContext(context);
+  const { details, setAirports } = useContext(context);
 
   const updateData = async (close) => {
     try {
